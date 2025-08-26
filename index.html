@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/stylesheet.css">
+    <script src="index.js"></script>
+    <title> Pizza Store </title>
+    <!-- Icon Box -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        span{
+            font-weight: bold;
+            font-size: 24px;
+        }
+        span2{
+            font-size: 20px;
+        }
+        span3{
+            font-size: 42px;
+            font-weight: bold;
+        }
+        span4{
+            font-size: 18px;
+        }
+        body{
+            margin: 0px;
+        }
+        .menuSite{
+            width: 100%;
+            height: 80px;
+            position: absolute;
+            z-index: 3000;
+        }
+        .menuSite ul{
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            float: right;
+            margin-right: 20px;
+        }
+        .menuSite a{
+            padding-left: 20px;
+            padding-right: 20px;
+            color: white;
+            display: inline-block;
+            text-decoration: none;
+            line-height: 80px;
+        }
+        .menuSite h1{
+            float: left;
+            color: white;
+            line-height: 50px;
+            font-size: 2em;
+            display: block;
+            margin-left: 100px;
+            margin-top: 10px;
+        }
+        .fold{
+            width: 100%;
+            background-image: url("./Photo/02.jpg");
+            background-size: cover;
+        }
+        .menuSite label #BurgerIcon,#clsoeIcon{
+            color: white;
+            font-size: 2.5em;
+            line-height: 80px;
+            float: right;
+            cursor: pointer;
+            display: none;
+        }
+
+        #CheckedBtn{
+            display: none;
+        }
+
+        /*============== Media Query ========================*/
+        @media (max-width:977px) {
+            .menuSite ul{
+                width: 100%;
+                height: 80vh;
+                position: fixed;
+                top: 80px;
+                background-color: black;
+                right: -100%;
+                padding: 0px;
+                margin: 0px;
+                transition: all 1s ease-in-out;
+            }
+            .menuSite ul a{
+                width: 100%;
+                height: 50px;
+                border-bottom: dashed 1px white;
+                text-align: center;
+                line-height: 50px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                padding: 0px;
+            }
+            .menuSite label #BurgerIcon{
+
+        color: white;
+        font-size: 2.5em;
+        line-height: 80px;
+        float: right;
+        cursor: pointer;
+        display: block;
+        }
+
+
+#CheckedBtn:checked ~ ul{
+        right: 0px;
+
+}
+
+#CheckedBtn:checked ~  label #clsoeIcon{
+        
+        display: block;
+}
+
+#CheckedBtn:checked ~  label #BurgerIcon{
+        
+        display: none;
+}
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Burger  Menu Structure -->
+    <div class="menuSite">
+
+        
+
+        <input type="checkbox" title="Menu" id="CheckedBtn">
+
+
+        <label for="CheckedBtn">
+<i class='bx bx-menu' id="BurgerIcon"></i>
+<i class='bx bx-x' id="clsoeIcon"></i>
+        </label> 
+
+
+        <!-- End Burger Menu Structure -->
+        <h1> Pizza </h1>
+        <ul class="ull">
+        <a href="#Home" class="activeBesho"><li> HOME </li></a>
+        <a href="#section2"><li> About </li></a>
+        <a href="#carouselExample"><li> Work </li></a>
+        <a href="#amora"><li> Reviews </li></a>
+        <a class="itemmenumobile" href="#contact"><li> Contact US</li></a>
+        <a href="#"><svg class="face" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="#ffffff" d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg></a>
+        <a href="#"><svg class="twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#ffffff" d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z"/></svg></a>
+        <a href="#"><svg class="insta" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#ffffff" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+    </ul>
+    </div> <!-- End Mobile -->
+
+    <div class="fold"></div> <!-- End Fold -->
+
+    <div class="section" id="Home">
+        <div class="shape">
+            <p class="onshape">NEW PIZZA RESTAURANT </p>
+            <p class="onshape2">IN PARIS</p>
+        </div>
+        <div class="testt">
+        <img class="mainphoto" src="assests/./vecteezy_ai-generated-pepperinu-pizza-on-black-background-with-copy_35830538.jpg">
+        </div>
+        </div>
+        <div class="container" id="section2">
+            <div class="text">
+                <h1>CREATIVITY</h1>
+                <h2>IN OUR DESIGNS</h2>
+            </div>
+            <div class="image">
+                <img src="assests/./7486c9b066.jpg" alt="Creative Design">
+            </div>
+        </div>
+        </div>
+        <div class="containerr">
+            <div class="itemm">
+              <img class="iconn" src="assests/bag.jpg" alt="bag icon">
+              <p>Lorem ipsum is simply dummy text of the printing and typesetting. Lorem Ipsum has been the industry’s standard dummy.</p>
+            </div>
+            <div class="itemm">
+              <img class="iconn" src="assests/lamp.jpeg" alt="lamp icon">
+              <p>Lorem ipsum is simply dummy text of the printing and typesetting. Lorem Ipsum has been the industry’s standard dummy.</p>
+            </div>
+            <div class="itemm">
+              <img class="iconn" src="assests/heart.png" alt="heart icon">
+              <p>Lorem ipsum is simply dummy text of the printing and typesetting. Lorem Ipsum has been the industry’s standard dummy.</p>
+            </div>
+          </div>
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="tasty">
+                    <p class="texttasty">Margherita Pizza</p>
+                    <p class="texttasty2">Pizza Margherita or Margherita pizza is a typical Neapolitan pizza, roundish in shape with a raised edge (the cornicione) and garnished with hand-crushed peeled tomatoes, mozzarella</p>
+                    <a href="project.html"><button class="buttontasty"><p class="textbuttontasty">Launch Project</p></button></a>
+                </div>
+                <img src="assests/./369063.jpg" class="d-block w-100" alt="photo">
+            </div>
+            <div class="carousel-item">
+                <div class="tasty">
+                    <p class="texttasty">Sea Food Pizza</p>
+                    <p class="texttasty2">Pizza Sea Food offers a delightful blend of fresh, coastal ingredients and artisanal pizza craftsmanship, creating a unique culinary experience. Its inviting flavors and relaxed atmosphere</p>
+                    <a href="project.html"><button class="buttontasty"><p class="textbuttontasty">Launch Project</p></button></a>
+                </div>
+                <img src="assests/./last.jpg" class="d-block w-100" alt="photo">
+            </div>
+            <div class="carousel-item">
+                <div class="tasty">
+                    <p class="texttasty">Mix Cheese Pizza</p>
+                    <p class="texttasty2">Mix Cheese pizza combines a rich medley of cheeses—mozzarella, cheddar, and parmesan—melted to perfection on a crispy crust, delivering a delightfully gooey and savory experience in every bite.</p>
+                    <a href="project.html"><button class="buttontasty"><p class="textbuttontasty">Launch Project</p></button></a>
+                </div>
+                <img src="assests/./img1.jpg" class="d-block w-100" alt="photo">
+            </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- Products Section -->
+<section class="products">
+  <h2 class="text-center mb-4">Our Products</h2>
+  <div class="products-container">
+    <div class="product-card">
+      <img src="assests/./369063.jpg" alt="Margherita Pizza">
+      <h3>Margherita Pizza</h3>
+      <p>Classic mozzarella & tomato.</p>
+      <button class="btn btn-dark">Order Now</button>
+    </div>
+    <div class="product-card">
+      <img src="assests/./last.jpg" alt="Sea Food Pizza">
+      <h3>Sea Food Pizza</h3>
+      <p>Fresh shrimp & calamari.</p>
+      <button class="btn btn-dark">Order Now</button>
+    </div>
+    <div class="product-card">
+      <img src="assests/./img1.jpg" alt="Mix Cheese Pizza">
+      <h3>Mix Cheese Pizza</h3>
+      <p>Cheddar, Mozzarella & Parmesan.</p>
+      <button class="btn btn-dark">Order Now</button>
+    </div>
+  </div>
+</section>
+
+        <div class="container" id="amora">
+            <div class="text">
+                <h1>Happy</h1>
+                <h2>Customers</h2>
+            </div>
+            <div class="image">
+                <img src="assests/./happy customer.jpg" alt="Happy Customer">
+            </div>
+        </div>
+    <div class="container" id="review">
+        <div class="row" id="rowreview" >
+        <div class="col-8" id="col8">
+            <img src="assests/./review-img-3.png">
+        <p><span>steve wiliams</span><br><span2>Roma Town</span2> <br><img class="comma" src="assests/./comma.png"> </p>
+        </div>
+        <div class="col-4" id="col4" >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti facere illum aut ratione, sequi dolore porro laboriosam recusandae impedit assumenda? Cupiditate doloremque illo hic sed qui eos necessitatibus impedit odit.</div>
+        </div>
+    </div>
+    </div>
+    <section class="counters bg-black" id="counter">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-12 col-lg-6 wow slideInLeft" data-wow-delay=".5s" >
+                    <div class="green-box">
+                        <div class="box-content">
+                            <h4 class="interest">Interesting Facts & Figures</h4>
+                            <h1 class="interest">New Agency Stats</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae egestas mi, vel dapibus diam mauris malesuada.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-6 text-center wow slideInRight" data-wow-delay=".5s">
+                    <div class="counter">
+                        <h5 class="count">125</h5>
+                        <p>Happy Customers</p>
+                    </div>
+                    <div class="counter">
+                        <h5 class="count">865</h5>
+                        <p>Lines of Codes</p>
+                    </div>
+                    <div class="counter">
+                        <h5 class="count">510</h5>
+                        <p>Project Completed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact-sec" id="contact">
+        <div class="container">
+          <div class="row justify-content-center align-items-start text-center text-lg-start gap-5 flex-wrap">
+            
+            <!-- Left Column -->
+            <div class="col-12 col-lg-4">
+              <div class="heading-area mb-4">
+                <h4 class="heading mb-2">Questions?</h4>
+                <span class="subheading">Get in Touch</span>
+              </div>
+              <div class="contact-details">
+                <ul>
+                  <li><i class="las la-paper-plane"></i> email@website.com</li>
+                  <li><i class="las la-phone"></i> +1 631 1234 5678</li>
+                  <li><i class="las la-map-marker"></i> 123 Park Avenue, New York</li>
+                </ul>
+              </div>
+            </div>
+      
+            <!-- Right Column -->
+            <div class="col-12 col-lg-6">
+              <form class="contact-form" id="contact-form-data">
+                <input type="text" name="userName" placeholder="Name" class="form-control">
+                <input type="text" name="userPhone" placeholder="Contact No" class="form-control">
+                <input type="email" name="userEmail" placeholder="Email" class="form-control">
+                <textarea class="form-control" name="userMessage" rows="5" placeholder="Type Your Message Here"></textarea>
+                <button type="submit" class="btn contact_btn w-100">Submit Information</button>
+              </form>
+            </div>
+      
+          </div>
+        </div>
+      </section>
+            
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="js/index.js"></script>    
+</body>
+</html>
